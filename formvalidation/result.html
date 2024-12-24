@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page</title>
+</head>
+<body>
+    <h1>Welcome, <span id="username"></span></h1>
+    <img id="profilePic" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%;">
+    <div id="userDetails"></div>
+
+    <script>
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+        if (loggedInUser) {
+            // Display user data
+            document.getElementById('username').innerText = loggedInUser.Name;
+
+            const userDetails = document.getElementById('userDetails');
+            userDetails.innerHTML = `
+                <p><strong>Email:</strong> ${loggedInUser.Email}</p>
+                <p><strong>Contact:</strong> ${loggedInUser.Contact}</p>
+                <p><strong>Address:</strong> ${loggedInUser.Address}</p>
+                <p><strong>Pin:</strong> ${loggedInUser.Pin}</p>
+                <p><strong>Objective:</strong> ${loggedInUser.Objective}</p>
+                <p><strong>Organization:</strong> ${loggedInUser.organization}</p>
+                <p><strong>Years of Experience:</strong> ${loggedInUser.yoe}</p>
+                <p><strong>Skills:</strong> ${loggedInUser.Skills}</p>
+                <p><strong>College:</strong> ${loggedInUser.College}</p>
+                <p><strong>Course:</strong> ${loggedInUser.Course}</p>
+                <p><strong>College CGPA:</strong> ${loggedInUser.Collegegpa}</p>
+                <p><strong>12th School:</strong> ${loggedInUser.School12th}</p>
+                <p><strong>12th CGPA:</strong> ${loggedInUser.Cgpa12}</p>
+                <p><strong>10th School:</strong> ${loggedInUser.School10th}</p>
+                <p><strong>10th CGPA:</strong> ${loggedInUser.Cgpa10}</p>
+                <p><strong>Certificate Name:</strong> ${loggedInUser.Certificate}</p>
+                <p><strong>Institute:</strong> ${loggedInUser.institute}</p>
+            `;
+
+            // Display profile image if it exists
+            if (localStorage.getItem('profileImage')) {
+                document.getElementById('profilePic').src = localStorage.getItem('profileImage');
+            }
+        } else {
+            alert("No user is logged in");
+            
+        }
+    </script>
+</body>
+</html>

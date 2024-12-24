@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2> Simple Calculator using html</h2>
+    <input type="number" placeholder="enter first number" id="first" >
+   
+
+    <input type="number" placeholder="enter second number" id="second">
+  
+
+
+    <input type="text"  id="output" placeholder="result" readonly >
+    <br><br>
+    <button onclick="calculator('+')">+</button>
+    <button onclick="calculator('-')">-</button>
+    <button onclick="calculator('/')">/</button>
+    <button onclick="calculator('*')">*</button>
+
+
+    <h2> Validation Calculator</h2>
+
+    <input type="text" placeholder="enter first number" id="first1"  class="first1" onblur="validateFirstInput()">
+    <div id="first-error" style="color:red"></div><br>
+
+    <input type="text" placeholder="enter second number" id="second1"  class="second1" onblur="validateSecondInput()">
+    <div id="second-error" style="color:red"></div><br>
+
+    <input type="text"  id="output1" placeholder="result" readonly>
+
+    <br><br>
+    <button onclick="calculatorv('+')">+</button>
+    <button onclick="calculatorv('-')">-</button>
+    <button onclick="calculatorv('/')">/</button>
+    <button onclick="calculatorv('*')">*</button>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
